@@ -8,14 +8,19 @@
 
 !$BGCOLOR = "white"
 !$BORDER = "#33668E"
-!$SECONDARY_LIGHT = "#0070C0"
+' !$SECONDARY_LIGHT = "#0070C0"
+!$SECONDARY_LIGHT = "#A3D1FF"
 !$SECONDARY_DARK = navy
-!$SECONDARY_TEXT = "#FFFFFF"
+' !$SECONDARY_TEXT = "#FFFFFF"
+!$SECONDARY_TEXT = $BGCOLOR
 
-!$INFO = "#ccf"
+' !$INFO = "#ccf"
+!$INFO = white
 !$INFO_DARK = Navy
 !$WHITE = "White"
-!$FONT_COLOR_EMPHASIS = Blue
+!$FONT_COLOR_EMPHASIS = "#0F4A82"
+!$BORDER_LINE = DarkGray
+!$HEADING_BGCOLOR = "#082642"
 
 !if %not(%variable_exists("$BGCOLOR"))
   !$BGCOLOR = "white"
@@ -65,17 +70,18 @@
   }
 
   activityDiagram {
-  BackgroundColor #E3E3E3
+  BackgroundColor #F0F0F0
+  ' #E3E3E3
   BorderColor #33668E
-  FontColor #000000
+  ' FontColor #000000
   FontName arial
 
   diamond {
     BackgroundColor #0070C0
     LineColor navy
-    FontColor #FFFFFF
-    ' FontName arial
-    ' FontSize 12
+    FontColor navy
+    FontName arial
+    FontSize 12
   }
   arrow {
     FontSize 12
@@ -116,7 +122,7 @@ skinparam Activity {
 
   DiamondBackgroundColor $SECONDARY_LIGHT
   DiamondBorderColor $SECONDARY_DARK
-  DiamondFontColor $SECONDARY_TEXT
+  DiamondFontColor $FGCOLOR
 }
 !endsub
 
@@ -197,9 +203,9 @@ skinparam note {
 
 !startsub swimlane
 skinparam swimlane {
-	BorderColor $INFO
-	BorderThickness 2
-	TitleBackgroundColor  $FGCOLOR
+	BorderColor $BORDER_LINE
+	BorderThickness 1
+	TitleBackgroundColor $HEADING_BGCOLOR
 	TitleFontColor $PRIMARY
 }
 !endsub
