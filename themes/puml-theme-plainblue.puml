@@ -6,11 +6,16 @@
 
 !$THEME = "plainblue"
 
-!$BGCOLOR = "#E3E3E3"
+!$BGCOLOR = "white"
 !$BORDER = "#33668E"
 !$SECONDARY_LIGHT = "#0070C0"
 !$SECONDARY_DARK = navy
 !$SECONDARY_TEXT = "#FFFFFF"
+
+!$INFO = "#ccf"
+!$INFO_DARK = Navy
+!$WHITE = "White"
+!$FONT_COLOR_EMPHASIS = Blue
 
 !if %not(%variable_exists("$BGCOLOR"))
   !$BGCOLOR = "white"
@@ -25,7 +30,7 @@
 !endif
 
 !ifndef $FONT_NAME
-  !$FONT_NAME = "Verdana"
+  !$FONT_NAME = "Helvetica"
 !endif
 
 !ifndef $FONT_NAME_MONOSPACED
@@ -55,23 +60,23 @@
     MaximumWidth 300
   }
   title {
-    FontSize 22
+    FontSize 28
     LineThickness 0
   }
 
-  ' activityDiagram {
-  ' BackgroundColor #E3E3E3
-  ' BorderColor #33668E
-  ' FontColor #000000
-  ' FontName arial
+  activityDiagram {
+  BackgroundColor #E3E3E3
+  BorderColor #33668E
+  FontColor #000000
+  FontName arial
 
-  ' diamond {
-  '   BackgroundColor #0070C0
-  '   LineColor navy
-  '   FontColor #FFFFFF
-  '   ' FontName arial
-  '   FontSize 12
-  ' }
+  diamond {
+    BackgroundColor #0070C0
+    LineColor navy
+    FontColor #FFFFFF
+    ' FontName arial
+    ' FontSize 12
+  }
   arrow {
     FontSize 12
   }
@@ -81,17 +86,15 @@
     RoundCorner 10
     BackgroundColor PeachPuff
   }
-  note {
-    FontColor Blue
-    LineColor Navy
-    BackgroundColor #ccf
-  }
 }
 document {
    BackgroundColor transparent
 }
 </style>
 
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 16
+skinparam dpi 100
 skinparam ArrowLollipopColor $FGCOLOR
 skinparam BackgroundColor $BGCOLOR
 skinparam DefaultFontName $FONT_NAME
@@ -104,7 +107,8 @@ skinparam UseBetaStyle true
 
 !startsub activity
 skinparam Activity {
-  BackgroundColor $BGCOLOR
+  ' BackgroundColor $BGCOLOR
+  ' BackgroundColor "#E3E3E3"
   BarColor $FGCOLOR
   BorderColor $FGCOLOR
   FontColor $FGCOLOR
@@ -113,6 +117,16 @@ skinparam Activity {
   DiamondBackgroundColor $SECONDARY_LIGHT
   DiamondBorderColor $SECONDARY_DARK
   DiamondFontColor $SECONDARY_TEXT
+}
+!endsub
+
+!startsub node
+
+skinparam node {
+  BackgroundColor #E3E3E3
+	BackgroundColor  $SECONDARY
+	BorderColor $LIGHT
+	FontColor $LIGHT
 }
 !endsub
 
@@ -168,10 +182,28 @@ skinparam IconPublic {
   Color $FGCOLOR
   BackgroundColor $BGCOLOR
 }
-skinparam Note {
-  FontColor $FGCOLOR
-  FontName $FONT_NAME
+' skinparam Note {
+'   FontColor $FGCOLOR
+'   FontName $FONT_NAME
+' }
+!startsub note
+skinparam note {
+	BorderThickness 1
+	BackgroundColor $INFO
+	BorderColor $INFO_DARK
+	FontColor $FONT_COLOR_EMPHASIS
 }
+!endsub
+
+!startsub swimlane
+skinparam swimlane {
+	BorderColor $INFO
+	BorderThickness 2
+	TitleBackgroundColor  $FGCOLOR
+	TitleFontColor $PRIMARY
+}
+!endsub
+
 skinparam Object {
   BorderColor $FGCOLOR
 }
