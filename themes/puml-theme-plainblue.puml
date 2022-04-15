@@ -6,12 +6,18 @@
 
 !$THEME = "plainblue"
 
+!$BGCOLOR = "#E3E3E3"
+!$BORDER = "#33668E"
+!$SECONDARY_LIGHT = "#0070C0"
+!$SECONDARY_DARK = navy
+!$SECONDARY_TEXT = "#FFFFFF"
+
 !if %not(%variable_exists("$BGCOLOR"))
   !$BGCOLOR = "white"
 !endif
 
 !if %not(%variable_exists("$FGCOLOR"))
-  !$FGCOLOR = "black"
+  !$FGCOLOR = "#000000"
 !endif
 
 !if %not(%variable_exists("$HYPERLINK_COLOR"))
@@ -53,19 +59,19 @@
     LineThickness 0
   }
 
-  activityDiagram {
-  BackgroundColor #E3E3E3
-  BorderColor #33668E
-  FontColor #000000
-  FontName arial
+  ' activityDiagram {
+  ' BackgroundColor #E3E3E3
+  ' BorderColor #33668E
+  ' FontColor #000000
+  ' FontName arial
 
-  diamond {
-    BackgroundColor #0070C0
-    LineColor navy
-    FontColor #FFFFFF
-    ' FontName arial
-    FontSize 12
-  }
+  ' diamond {
+  '   BackgroundColor #0070C0
+  '   LineColor navy
+  '   FontColor #FFFFFF
+  '   ' FontName arial
+  '   FontSize 12
+  ' }
   arrow {
     FontSize 12
   }
@@ -96,13 +102,20 @@ skinparam SequenceLifeLineBorderColor $FGCOLOR
 skinparam Shadowing false
 skinparam UseBetaStyle true
 
+!startsub activity
 skinparam Activity {
   BackgroundColor $BGCOLOR
   BarColor $FGCOLOR
   BorderColor $FGCOLOR
   FontColor $FGCOLOR
   FontName $FONT_NAME
+
+  DiamondBackgroundColor $SECONDARY_LIGHT
+  DiamondBorderColor $SECONDARY_DARK
+  DiamondFontColor $SECONDARY_TEXT
 }
+!endsub
+
 skinparam Boundary {
   FontColor $FGCOLOR
 }
