@@ -86,12 +86,6 @@
   arrow {
     FontSize 12
   }
-  partition {
-    LineColor red
-    FontColor green
-    RoundCorner 10
-    BackgroundColor PeachPuff
-  }
 }
 document {
    BackgroundColor transparent
