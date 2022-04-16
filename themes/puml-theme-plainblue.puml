@@ -1,12 +1,12 @@
 ''
-'' A simple black on white theme (with blue hyperlinks)
+' A simple theme with pale blue accents base on the original 'plain' theme by Matthew Leather.
 ''
-'' Original Author: Matthew Leather
+'' Author: jozbone
 ''
 
 !$THEME = "plainblue"
 
-!$BGCOLOR = "white"
+!$BGCOLOR = White
 !$BORDER = "#33668E"
 ' !$SECONDARY_LIGHT = "#0070C0"
 !$SECONDARY_LIGHT = "#A3D1FF"
@@ -21,6 +21,10 @@
 !$FONT_COLOR_EMPHASIS = "#0F4A82"
 !$BORDER_LINE = DarkGray
 !$HEADING_BGCOLOR = "#082642"
+
+!$DANGER = "#ff7851"
+!$WARNING = "#ffce67"
+
 
 !if %not(%variable_exists("$BGCOLOR"))
   !$BGCOLOR = "white"
@@ -41,6 +45,18 @@
 !ifndef $FONT_NAME_MONOSPACED
   !$FONT_NAME_MONOSPACED = "Courier"
 !endif
+
+!procedure $failure($msg)
+  <font color=$DANGER><b>$msg
+!endprocedure
+
+!procedure $success($msg)
+  <font color=$SUCCESS><b>$msg
+!endprocedure
+
+!procedure $warning($msg)
+  <font color=$WARNING><b>$msg
+!endprocedure
 
 <style>
   root {
@@ -72,7 +88,7 @@
   activityDiagram {
   BackgroundColor #F0F0F0
   ' #E3E3E3
-  BorderColor #33668E
+  ' BorderColor #33668E
   ' FontColor #000000
   FontName arial
 
@@ -127,6 +143,15 @@ skinparam node {
 	BackgroundColor  $SECONDARY
 	BorderColor $LIGHT
 	FontColor $LIGHT
+}
+!endsub
+
+!startsub partition
+
+skinparam partition {
+	BorderColor $FGCOLOR
+	FontColor $FGCOLOR
+	BackgroundColor $BGCOLOR
 }
 !endsub
 
