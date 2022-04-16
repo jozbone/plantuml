@@ -7,6 +7,7 @@
 !$THEME = "plainblue"
 
 !$BGCOLOR = White
+!$SECONDARY_BGCOLOR = aliceblue
 !$BORDER = "#33668E"
 ' !$SECONDARY_LIGHT = "#0070C0"
 !$SECONDARY_LIGHT = "#A3D1FF"
@@ -151,7 +152,7 @@ skinparam node {
 skinparam partition {
 	BorderColor $FGCOLOR
 	FontColor $FGCOLOR
-	BackgroundColor $BGCOLOR
+	BackgroundColor $SECONDARY_BGCOLOR
 }
 !endsub
 
