@@ -82,7 +82,7 @@
     MaximumWidth 300
   }
   title {
-    FontSize 28
+    FontSize 16
     LineThickness 0
   }
 
