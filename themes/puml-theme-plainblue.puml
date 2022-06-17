@@ -227,6 +227,7 @@ skinparam swimlane {
 	BorderThickness 1
 	TitleBackgroundColor $HEADING_BGCOLOR
 	TitleFontColor $PRIMARY
+	TitleFontSize 16
 }
 !endsub
 
