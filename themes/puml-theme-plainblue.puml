@@ -109,6 +109,7 @@ document {
 }
 </style>
 
+skinparam TitleFontSize 16
 skinparam defaultFontName "Helvetica"
 skinparam defaultFontSize 16
 skinparam dpi 100
